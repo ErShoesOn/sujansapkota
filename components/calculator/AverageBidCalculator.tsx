@@ -84,14 +84,6 @@ function formatPercent(value: number | null) {
   return value === null ? "—" : `${(value * 100).toFixed(2)}%`;
 }
 
-function formatBelowEstimate(value: number | null) {
-  if (value === null) return "—";
-  if (Math.abs(value) < 0.00005) return "0.00% below estimate";
-  return value > 0
-    ? `${(value * 100).toFixed(2)}% below estimate`
-    : `${(Math.abs(value) * 100).toFixed(2)}% above estimate`;
-}
-
 function ResultItem({
   label,
   value,
@@ -499,11 +491,6 @@ export function AverageBidCalculator() {
                 <ResultItem
                   label="Winning bid as % of estimate"
                   value={formatPercent(result.percentOfEstimate)}
-                />
-                <ResultItem
-                  label="Winner below estimate by"
-                  value={formatBelowEstimate(result.belowEstimatePercent)}
-                  highlight
                 />
                 <ResultItem label="Tie check" value={result.tie} />
               </dl>
