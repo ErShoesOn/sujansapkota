@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createMetadata({
   title: "Professional Disclaimer | Er Sujan Sapkota",
   description:
-    "Important information about the scope of guidance published on sapkotasujan.com.np.",
+    "Important information about the scope of guidance published on www.sapkotasujan.com.np.",
   path: "/disclaimer",
 });
 

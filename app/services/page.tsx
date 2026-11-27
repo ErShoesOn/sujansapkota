@@ -55,7 +55,7 @@ export default function ServicesPage() {
                 id={service.slug}
                 className="grid gap-6 rounded-2xl border border-line bg-white p-7 shadow-soft sm:p-9 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-8"
               >
-                <span className="font-display text-3xl font-semibold text-gold-500/70">
+                <span className="font-display text-3xl font-semibold text-gold-600">
                   0{index + 1}
                 </span>
                 <div>

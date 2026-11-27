@@ -64,7 +64,7 @@ export default function Image() {
 
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 20, color: "#a8b4c4" }}>
           <div>Practical guidance for contractors in Nepal</div>
-          <div>sapkotasujan.com.np</div>
+          <div>www.sapkotasujan.com.np</div>
         </div>
       </div>
     ),

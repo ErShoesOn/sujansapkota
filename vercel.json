@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "sapkotasujan.com.np" }
+      ],
+      "destination": "https://www.sapkotasujan.com.np/:path*",
+      "permanent": true
+    }
+  ]
+}

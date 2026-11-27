@@ -28,7 +28,7 @@ export function ServicesPreview() {
               className="group flex h-full flex-col rounded-xl border border-line bg-cream p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold-400/60 hover:bg-white hover:shadow-card"
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="font-display text-2xl font-semibold text-gold-500/70">
+                <span className="font-display text-2xl font-semibold text-gold-600">
                   0{index + 1}
                 </span>
                 <ArrowRight

@@ -9,21 +9,16 @@ export function Footer() {
       <Container className="py-14 sm:py-16">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-md border border-gold-500/40 font-display text-lg font-semibold text-gold-400">
-                SS
-              </span>
-              <div>
-                <p className="text-base font-bold">{site.name}</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-white/50">
-                  {site.role}
-                </p>
-              </div>
+            <div>
+              <p className="text-base font-bold">{site.name}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/50">
+                {site.role}
+              </p>
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-white/65">
               {site.description}
             </p>
-            <p className="mt-6 max-w-md text-xs leading-relaxed text-white/45">
+            <p className="mt-6 max-w-md text-xs leading-relaxed text-white/50">
               Independent professional guidance. Not affiliated with PPMO or the
               Government of Nepal. Guidance does not guarantee tender awards.
             </p>
@@ -78,7 +73,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>

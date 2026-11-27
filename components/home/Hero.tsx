@@ -7,12 +7,7 @@ export function Hero() {
     <section className="depth-glow relative overflow-hidden bg-navy-950 text-white">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #d6b36a 1px, transparent 1px), linear-gradient(to bottom, #d6b36a 1px, transparent 1px)",
-          backgroundSize: "78px 78px",
-        }}
+        className="hero-grid pointer-events-none absolute inset-0 opacity-[0.14]"
       />
       <div
         aria-hidden="true"
@@ -52,10 +47,10 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-float">
           <Image
-            src="/images/training-session.jpg"
-            alt="Public procurement training session in Nepal"
+            src="/images/hero-person.jpg"
+            alt="Er Sujan Sapkota"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover"

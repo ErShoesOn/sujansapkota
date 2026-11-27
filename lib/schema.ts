@@ -15,7 +15,7 @@ export function personSchema() {
     jobTitle: site.role,
     sameAs: [site.youtubeUrl],
     description:
-      "Public Procurement Consultant with 7+ years of experience helping contractors and businesses navigate Nepal's public procurement system.",
+      "Public Procurement Consultant with 10+ years of experience helping contractors and businesses navigate Nepal's public procurement system.",
     knowsAbout: [
       "Public Procurement in Nepal",
       "Tendering and Bid Preparation",
@@ -26,7 +26,7 @@ export function personSchema() {
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "degree",
-      name: "MBA (Project Management), BE",
+      name: "MBA (Project Management), Bachelor in Engineering",
     },
     worksFor: {
       "@type": "Organization",

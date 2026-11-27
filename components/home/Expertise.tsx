@@ -13,7 +13,7 @@ const areas = [
   {
     icon: ScrollText,
     title: "Public Procurement",
-    text: "Understanding the system, the rules and how they apply in practice.",
+    text: "Strong working knowledge of the Public Procurement Act and Public Procurement Regulations, and how they apply in practice.",
   },
   {
     icon: FileCheck2,

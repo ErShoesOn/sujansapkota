@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy | Er Sujan Sapkota",
   description:
-    "How information shared when contacting sapkotasujan.com.np is handled.",
+    "How information shared when contacting www.sapkotasujan.com.np is handled.",
   path: "/privacy",
 });
 

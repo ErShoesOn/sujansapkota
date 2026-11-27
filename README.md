@@ -1,4 +1,4 @@
-# sapkotasujan.com.np
+# www.sapkotasujan.com.np
 
 Official professional website of **Er Sujan Sapkota**, Public Procurement Consultant (Nepal).
 
@@ -40,7 +40,7 @@ npm run typecheck
 
 Copy `.env.example` to `.env.local` and fill in verified values:
 
-- `NEXT_PUBLIC_SITE_URL` — canonical site URL (default: `https://sapkotasujan.com.np`)
+- `NEXT_PUBLIC_SITE_URL` — canonical site URL (default: `https://www.sapkotasujan.com.np`)
 - `NEXT_PUBLIC_PHONE` — verified phone number (defaults to `+9779851398513`)
 - `NEXT_PUBLIC_WHATSAPP` — verified WhatsApp number/link (defaults to `+9779851398513`)
 - `NEXT_PUBLIC_EMAIL` — verified email address (defaults to `ersapkotasujan@gmail.com`)
@@ -69,7 +69,7 @@ Articles, updates, and resources live in `content/` as Markdown files with front
 1. Push this folder to a GitHub repository on the `main` branch (Git must be installed locally, or use GitHub Desktop).
 2. Connect that GitHub repository to Vercel.
 3. Set environment variables in Vercel project settings (see `.env.example`). Do not upload `.env.local`.
-4. Configure production domain `sapkotasujan.com.np` and enforce HTTPS/canonical redirects.
+4. Configure production domain `www.sapkotasujan.com.np` and enforce HTTPS/canonical redirects.
 5. Deploy from `main`; use preview deployments for branches.
 6. After deploy, verify: `/`, `/sitemap.xml`, `/robots.txt`, metadata, and canonical redirects.
 

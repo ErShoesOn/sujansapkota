@@ -212,19 +212,24 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        question: "Do you offer online and in-person sessions?",
+        question: "Who can attend procurement training?",
         answer:
-          "Yes. Delivery format is planned with the organisation based on the topic, participants and location. Contact us to discuss requirements.",
+          "Training can be designed for new contractors, experienced contractors, procurement and project staff, engineering firms, suppliers and organisations arranging procurement awareness sessions.",
       },
       {
-        question: "Are certificates or fixed schedules published?",
+        question: "Do you offer online and in-person sessions?",
         answer:
-          "No fixed schedule, fee or certificate is published here. Details are shared directly for each confirmed training request.",
+          "Yes. Sessions can be delivered online or as physical workshops. The format is agreed with the requesting organisation based on the topic and participants.",
+      },
+      {
+        question: "Are fees, schedules or certificates published?",
+        answer:
+          "No. Details such as fees, dates and certification are not published until confirmed for a specific training request. Use the contact page to discuss your requirements.",
       },
       {
         question: "Can topics be customised?",
         answer:
-          "Yes. Training content is adapted to the audience — for example, basics for new contractors or documentation practice for experienced teams.",
+          "Yes. Topics and examples are adapted to the experience level and the practical questions participants need to answer.",
       },
     ],
   },

@@ -9,7 +9,7 @@
   --color-gold-300: #e6cc92;
   --color-gold-400: #d6b36a;
   --color-gold-500: #c59a45;
-  --color-gold-600: #a67c2d;
+  --color-gold-600: #8a651f;
   --color-charcoal: #22272e;
   --color-muted: #5f6b7a;
   --color-cream: #f6f7f9;
@@ -111,6 +111,13 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-gold-600);
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, var(--color-gold-400) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-gold-400) 1px, transparent 1px);
+    background-size: 78px 78px;
   }
 
   .prose-content h2 {

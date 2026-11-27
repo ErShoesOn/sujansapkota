@@ -11,7 +11,7 @@ export function HeroCredentials() {
               <BadgeCheck aria-hidden="true" className="h-4 w-4" />
             </span>
             <div>
-              <p className="text-sm font-semibold text-navy-900">7+ years</p>
+              <p className="text-sm font-semibold text-navy-900">10+ years</p>
               <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-muted">
                 Experience
               </p>
@@ -24,7 +24,7 @@ export function HeroCredentials() {
             </span>
             <div>
               <p className="text-sm font-semibold leading-snug text-navy-900">
-                MBA (Project Management)
+                MBA/BE
               </p>
               <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-muted">
                 Qualification

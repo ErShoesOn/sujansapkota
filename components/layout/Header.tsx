@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { mainNav } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setOpen(false);
@@ -23,12 +25,24 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-md">
-      <Container className="flex h-[72px] items-center justify-between gap-6">
+      <Container className="flex h-[72px] items-center justify-between gap-4 sm:gap-6">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3 rounded-sm"
@@ -39,7 +53,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-5 xl:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-4 xl:flex">
           {mainNav.map((item) => (
             <Link
               key={item.href}
@@ -59,11 +73,13 @@ export function Header() {
         </nav>
 
         <button
+          ref={menuButtonRef}
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((value) => !value)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-navy-900 xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-navy-900"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -71,21 +87,32 @@ export function Header() {
 
       {open && (
         <nav
+          id="mobile-menu"
           aria-label="Mobile navigation"
-          className="max-h-[calc(100vh-72px)] overflow-y-auto border-t border-line bg-white xl:hidden"
+          className="max-h-[calc(100vh-72px)] overflow-y-auto border-t border-line bg-white"
         >
-          <Container className="py-5">
-            <ul className="grid gap-1 sm:grid-cols-2">
+          <Container className="py-6">
+            <div className="mb-5 flex justify-center">
+              <Button
+                href="/average-bid-calculator"
+                variant="gold"
+                className="w-full max-w-xs whitespace-nowrap"
+              >
+                Average Bid Calculator
+              </Button>
+            </div>
+            <ul className="flex flex-wrap justify-center gap-2">
               {mainNav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
+                    onClick={() => setOpen(false)}
                     className={cn(
-                      "block rounded-md px-3 py-3 text-sm font-medium transition-colors",
+                      "block min-w-[132px] rounded-md px-4 py-3 text-center text-sm font-medium transition-colors",
                       isActive(item.href)
                         ? "bg-navy-900 text-white"
-                        : "text-navy-800 hover:bg-cream",
+                        : "bg-cream text-navy-800 hover:bg-gold-500/10",
                     )}
                   >
                     {item.label}

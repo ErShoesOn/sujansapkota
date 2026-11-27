@@ -9,17 +9,19 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createMetadata({
   title: "About Er Sujan Sapkota | Public Procurement Consultant in Nepal",
   description:
-    "Learn about Er Sujan Sapkota, a Public Procurement Consultant with 7+ years of experience and an MBA (Project Management), BE, helping contractors navigate Nepal's public procurement system.",
+    "Learn about Er Sujan Sapkota, a Public Procurement Consultant with 10+ years of experience and an MBA (Project Management), Bachelor in Engineering, helping contractors navigate Nepal's public procurement system.",
   path: "/about",
 });
 
 const facts = [
   ["Name", "Er Sujan Sapkota"],
   ["Primary title", "Procurement Consultant"],
-  ["Professional positioning", "Public Procurement Expert"],
+  ["Professional positioning", "Public Procurement Consultant"],
   ["Additional titles", "Tendering Specialist, Procurement Trainer"],
-  ["Experience", "7+ years"],
-  ["Qualification", "MBA (Project Management), BE"],
+  ["Experience", "10+ years"],
+  ["Qualification", "MBA (Project Management), Bachelor in Engineering"],
+  ["BE", "Advanced College of Engineering and Management (TU/IOE), 2010–14"],
+  ["MBA", "Phoenix College of Management, Fall 2021"],
   ["Primary expertise", "Public Procurement"],
   ["Geographic focus", "Nepal"],
 ];
@@ -65,11 +67,25 @@ export default function AboutPage() {
         <Container className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-16">
           <div>
             <SectionHeading
-              eyebrow="Professional introduction"
+              eyebrow="About myself"
               title="Experience beyond theory"
-              description="I am a Public Procurement Consultant helping contractors and businesses navigate Nepal's public procurement system. My work is grounded in seven-plus years of practical experience and a clear understanding of the difficulties contractors face throughout the procurement lifecycle."
+              description="I am a Public Procurement Consultant helping contractors and businesses navigate Nepal's public procurement system. My background combines engineering, an MBA and hands-on work on roads and bridges projects since 2019."
             />
             <div className="mt-7 space-y-4 text-sm leading-relaxed text-charcoal/85 sm:text-base">
+              <p>
+                I completed my Bachelor&apos;s in Engineering at Advanced College of
+                Engineering and Management, affiliated with TU/IOE, in the 2010–14
+                batch. I later completed my MBA from Phoenix College of Management as
+                part of the Fall 2021 batch.
+              </p>
+              <p>
+                I have been in the construction business since 2019, working on roads
+                and bridges projects. I have a strong working knowledge of the Public
+                Procurement Act and Public Procurement Regulations. I have been
+                passionate about learning procurement from the beginning, and today I
+                am confident in guiding newcomers through Nepal&apos;s public
+                procurement process.
+              </p>
               <p>
                 My professional approach is based on practical work experience,
                 accumulated knowledge and helping clients understand complicated
@@ -118,7 +134,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {specialties.map((item, index) => (
               <div key={item.title} className="rounded-xl border border-line bg-cream p-6">
-                <span className="font-display text-xl font-semibold text-gold-500/80">
+                <span className="font-display text-xl font-semibold text-gold-600">
                   0{index + 1}
                 </span>
                 <h2 className="mt-3 text-lg font-bold tracking-tight">{item.title}</h2>

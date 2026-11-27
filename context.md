@@ -1,8 +1,8 @@
 ﻿# MASTER PROJECT CONTEXT
 # SUJAN SAPKOTA â€” PUBLIC PROCUREMENT CONSULTANT
 
-**Project:** sapkotasujan.com.np  
-**Website:** https://sapkotasujan.com.np  
+**Project:** www.sapkotasujan.com.np  
+**Website:** https://www.sapkotasujan.com.np  
 **Project Type:** Professional Personal Brand + Procurement Support + Knowledge & Learning Platform  
 **Primary Market:** Nepal  
 **Primary Language:** English  
@@ -56,13 +56,13 @@ The website should eventually become a recognized online knowledge resource for 
 |---|---|
 | Name | Er Sujan Sapkota |
 | Primary Professional Title | Procurement Consultant |
-| Professional Positioning | Public Procurement Expert |
+| Professional Positioning | Public Procurement Consultant |
 | Additional Titles | Tendering Specialist, Procurement Trainer |
 | Experience | 7+ years |
-| Qualification | MBA (Project Management), BE |
+| Qualification | MBA (Project Management), Bachelor in Engineering |
 | Primary Expertise | Public Procurement |
 | Geographic Focus | Nepal |
-| Website | sapkotasujan.com.np |
+| Website | www.sapkotasujan.com.np |
 | Website Language | English |
 
 ## Official Professional Introduction
@@ -576,7 +576,7 @@ The website must be developed around high-intent searches related to procurement
 
 - Procurement Consultant in Nepal.
 - Public Procurement Consultant Nepal.
-- Public Procurement Expert Nepal.
+- Public Procurement Consultant Nepal.
 - Procurement Specialist Nepal.
 - Tendering Consultant Nepal.
 - Procurement Support Nepal.
@@ -624,7 +624,7 @@ These are target keyword hypotheses, not verified search-volume data. Perform ac
 | Search intent | Example | Destination |
 |---|---|---|
 | Commercial | Procurement Consultant Nepal | Homepage |
-| Commercial | Public Procurement Expert Nepal | About / Homepage |
+| Commercial | Public Procurement Consultant Nepal | About / Homepage |
 | Transactional | Tender Preparation Consultant | Service page |
 | Transactional | Bolpatra Support | e-GP service page |
 | Informational | How to Register Bidder Account | Article |
@@ -689,7 +689,7 @@ Use Next.js MetadataRoute.Sitemap.
 
 Production URL:
 
-https://sapkotasujan.com.np/sitemap.xml
+https://www.sapkotasujan.com.np/sitemap.xml
 
 Requirements:
 
@@ -714,7 +714,7 @@ Implement:
 
 Production URL:
 
-https://sapkotasujan.com.np/robots.txt
+https://www.sapkotasujan.com.np/robots.txt
 
 Initial policy:
 
@@ -726,7 +726,7 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://sapkotasujan.com.np/sitemap.xml
+Sitemap: https://www.sapkotasujan.com.np/sitemap.xml
 ```
 
 Adjust rules to match actual application routes.
@@ -793,8 +793,8 @@ Maintain consistent information across the website:
 - Profession: Procurement Consultant.
 - Expertise: Public Procurement in Nepal.
 - Experience: 7+ years.
-- Qualification: MBA (Project Management), BE.
-- Website: sapkotasujan.com.np.
+- Qualification: MBA (Project Management), Bachelor in Engineering.
+- Website: www.sapkotasujan.com.np.
 
 ## 17.2 Author Authority
 
@@ -1132,7 +1132,7 @@ Requirements:
 
 Production domain:
 
-https://sapkotasujan.com.np
+https://www.sapkotasujan.com.np
 
 Use this as the canonical website URL.
 
@@ -1408,7 +1408,7 @@ The ultimate goal is to establish:
 
 **Er Sujan Sapkota as a trusted Public Procurement Consultant and a valuable source of practical procurement knowledge for contractors and businesses in Nepal.**
 
-The website should not merely tell visitors that Er Sujan Sapkota is a procurement expert.
+The website should not merely tell visitors that Er Sujan Sapkota is a procurement consultant.
 
 It should demonstrate professional knowledge through:
 

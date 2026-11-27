@@ -9,7 +9,7 @@ const phoneDigits = (
 const contactEmail = process.env.NEXT_PUBLIC_EMAIL?.trim() || "ersapkotasujan@gmail.com";
 
 const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://sapkotasujan.com.np"
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.sapkotasujan.com.np"
 ).replace(/\/$/, "");
 
 const youtubeUrl =
@@ -64,20 +64,18 @@ export const mainNav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Knowledge Centre", href: "/knowledge-centre" },
-  { label: "Training", href: "/training" },
-  { label: "Resources", href: "/resources" },
-  { label: "YouTube", href: "/youtube" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerNav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Procurement Training", href: "/services/procurement-training" },
   { label: "Knowledge Centre", href: "/knowledge-centre" },
-  { label: "Procurement Updates", href: "/updates" },
-  { label: "Training", href: "/training" },
-  { label: "Resources", href: "/resources" },
-  { label: "YouTube", href: "/youtube" },
+  { label: "Resources", href: "/knowledge-centre/resources" },
+  { label: "Videos", href: "/knowledge-centre#videos" },
+  { label: "Updates", href: "/knowledge-centre#updates" },
+  { label: "Average Bid Calculator", href: "/average-bid-calculator" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Disclaimer", href: "/disclaimer" },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ExternalLink, FileText, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Calculator, ExternalLink, FileText, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,17 +12,20 @@ export const metadata: Metadata = createMetadata({
   title: "Downloadable Procurement Resources and Checklists | Nepal",
   description:
     "View reference PDFs for public procurement in Nepal, including the Public Procurement Act and Regulation, technical and price bid letter formats, joint venture documents and representative authorisation.",
-  path: "/resources",
+  path: "/knowledge-centre/resources",
 });
 
-export default function ResourcesPage() {
+export default function KnowledgeResourcesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Resources"
+        eyebrow="Knowledge Centre"
         title="Downloadable procurement resources"
         description="Reference documents to help contractors understand public procurement rules, prepare technical and price bid letters, joint venture documents and representative authorisation."
-        breadcrumbs={[{ name: "Resources", path: "/resources" }]}
+        breadcrumbs={[
+          { name: "Knowledge Centre", path: "/knowledge-centre" },
+          { name: "Resources", path: "/knowledge-centre/resources" },
+        ]}
       />
 
       <section className="bg-cream py-16 sm:py-20">
@@ -53,7 +57,7 @@ export default function ResourcesPage() {
                   href={resource.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`View ${resource.title}`}
+                  aria-label={`View PDF: ${resource.title}`}
                   className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
                 >
                   <ExternalLink aria-hidden="true" className="h-4 w-4" />
@@ -61,6 +65,35 @@ export default function ResourcesPage() {
                 </a>
               </article>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-12 sm:py-16">
+        <Container>
+          <div className="flex flex-col gap-6 rounded-2xl border border-line bg-cream p-7 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-9">
+            <div className="flex gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-navy-900 text-gold-400">
+                <Calculator aria-hidden="true" className="h-5 w-5" />
+              </span>
+              <div>
+                <h2 className="text-xl font-bold tracking-tight text-navy-900">
+                  Average bid calculator
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                  Enter bids and the estimate to apply the 30% low-bid check,
+                  calculate the average, identify the winner and view the result as
+                  PDF.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/average-bid-calculator"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+            >
+              Open Calculator
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
           </div>
         </Container>
       </section>

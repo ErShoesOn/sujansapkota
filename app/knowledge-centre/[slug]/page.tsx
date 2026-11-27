@@ -127,7 +127,7 @@ export default async function ArticlePage({ params }: Props) {
               <p className="mt-4 text-sm font-bold text-navy-900">{article.author}</p>
               <p className="mt-1 text-xs text-muted">{site.role}</p>
               <p className="mt-3 text-xs leading-relaxed text-muted">
-                {site.role} with 7+ years of experience helping contractors and
+                {site.role} with 10+ years of experience helping contractors and
                 businesses navigate Nepal&apos;s public procurement system.
               </p>
               <Link
