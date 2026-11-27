@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type MouseEvent as ReactMouseEvent,
+} from "react";
 import { Download, Info, Plus, RotateCcw, Trash2, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { calculateAverageBid, type BidderInput } from "@/lib/averageBid";
