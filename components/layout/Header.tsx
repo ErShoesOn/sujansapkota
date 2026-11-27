@@ -19,6 +19,16 @@ export function Header() {
   }, [pathname]);
 
   useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const closeOnDesktop = (event: MediaQueryList | MediaQueryListEvent) => {
+      if (event.matches) setOpen(false);
+    };
+    closeOnDesktop(desktop);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -118,7 +128,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={handleToggle}
-          className="inline-flex h-10 items-center gap-2 rounded-md border border-line px-3 text-sm font-semibold text-navy-900 transition-colors hover:bg-cream"
+          className="inline-flex h-10 items-center gap-2 rounded-md border border-line px-3 text-sm font-semibold text-navy-900 transition-colors hover:bg-cream xl:hidden"
         >
           {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           <span>{open ? "Close" : "Menu"}</span>

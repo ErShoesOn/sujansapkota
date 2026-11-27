@@ -60,10 +60,10 @@ export const site = {
 export type NavItem = { label: string; href: string };
 
 export const mainNav: NavItem[] = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Knowledge Centre", href: "/knowledge-centre" },
+  { label: "Average Bid Calculator", href: "/average-bid-calculator" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -73,8 +73,6 @@ export const footerNav: NavItem[] = [
   { label: "Procurement Training", href: "/services/procurement-training" },
   { label: "Knowledge Centre", href: "/knowledge-centre" },
   { label: "Resources", href: "/knowledge-centre/resources" },
-  { label: "Videos", href: "/knowledge-centre#videos" },
-  { label: "Updates", href: "/knowledge-centre#updates" },
   { label: "Average Bid Calculator", href: "/average-bid-calculator" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy" },

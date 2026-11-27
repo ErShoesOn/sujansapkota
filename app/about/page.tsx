@@ -69,7 +69,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="About myself"
               title="Experience beyond theory"
-              description="I am a Public Procurement Consultant helping contractors and businesses navigate Nepal's public procurement system. My background combines engineering, an MBA and hands-on work on roads and bridges projects since 2019."
+              description="I am a Public Procurement Consultant helping contractors and businesses navigate Nepal's public procurement system. My background combines engineering, an MBA and hands-on work on roads and bridges projects since 2015."
             />
             <div className="mt-7 space-y-4 text-sm leading-relaxed text-charcoal/85 sm:text-base">
               <p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 part of the Fall 2021 batch.
               </p>
               <p>
-                I have been in the construction business since 2019, working on roads
+                I have been in the construction business since 2015, working on roads
                 and bridges projects. I have a strong working knowledge of the Public
                 Procurement Act and Public Procurement Regulations. I have been
                 passionate about learning procurement from the beginning, and today I
@@ -141,33 +141,6 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>
               </div>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-cream py-16 sm:py-20">
-        <Container className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div>
-            <SectionHeading
-              eyebrow="Professional philosophy"
-              title="Clear guidance, honest boundaries"
-            />
-          </div>
-          <div className="space-y-4 text-sm leading-relaxed text-charcoal/85 sm:text-base">
-            <p>
-              Procurement decisions affect real businesses. That is why the emphasis is
-              on careful reading, honest eligibility assessment and documentation that
-              stands up to review.
-            </p>
-            <p>
-              Official laws, regulations and government notices always take precedence.
-              Professional interpretation is clearly separated from official
-              requirements, and no tender award or contract acquisition is guaranteed.
-            </p>
-            <p>
-              This site is an independent professional resource. It does not claim
-              affiliation with PPMO or any government institution.
-            </p>
           </div>
         </Container>
       </section>

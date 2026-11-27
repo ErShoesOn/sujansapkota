@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Mail, MessageCircle, Phone } from "lucide-react";
-import { Container } from "@/components/ui/Container";
-import { PageHeader } from "@/components/layout/PageHeader";
+import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { FAQ } from "@/components/ui/FAQ";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { contactFaqs } from "@/lib/faqs";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact | Call or Message Er Sujan Sapkota",
   description:
-    "Contact Er Sujan Sapkota directly by phone or WhatsApp for procurement support, tendering assistance, e-GP and Bolpatra support, contract management and training in Nepal.",
+    "Contact Er Sujan Sapkota directly by phone, WhatsApp, email, Facebook and TikTok for practical public procurement guidance, tendering support and e-GP / Bolpatra questions in Nepal.",
   path: "/contact",
 });
 
@@ -29,117 +34,218 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-export default function ContactPage() {
-  const { phoneUrl, whatsappUrl, email } = site.contact;
-  const { facebookUrl, tiktokUrl } = site;
+function YouTubeIcon({ className }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z" />
+    </svg>
+  );
+}
 
-  const channels = [
-    {
-      icon: Phone,
-      eyebrow: "Phone call",
-      title: "Talk it through",
-      description:
-        "Call directly for a quick discussion about your tender, contract or procurement question.",
-      href: phoneUrl,
-      action: "Call now",
-      variant: "primary" as const,
-    },
-    {
-      icon: MessageCircle,
-      eyebrow: "WhatsApp",
-      title: "Send a message",
-      description:
-        "Share a short question or documents and continue the conversation at your convenience.",
-      href: whatsappUrl,
-      action: "Chat on WhatsApp",
-      variant: "gold" as const,
-    },
-    {
-      icon: FacebookIcon,
-      eyebrow: "Facebook",
-      title: "Follow along",
-      description:
-        "Follow Sujan Sapkota for updates, practical tips and short lessons on public procurement and tendering.",
-      href: facebookUrl,
-      action: "Visit Facebook Page",
-      variant: "gold" as const,
-    },
-    {
-      icon: TikTokIcon,
-      eyebrow: "TikTok",
-      title: "Watch short lessons",
-      description:
-        "Quick, practical procurement and tender preparation tips in short videos.",
-      href: tiktokUrl,
-      action: "Visit TikTok",
-      variant: "gold" as const,
-    },
+const shareDetails = [
+  "Tender or contract reference",
+  "Your role in the tender",
+  "Procurement stage or document involved",
+  "Deadline or timeline",
+  "The specific question you want answered",
+];
+
+const nextSteps = [
+  "Send a short question on WhatsApp or call.",
+  "Share the tender reference, timeline and main issue.",
+  "Discuss the requirements and realistic next steps.",
+  "Continue by phone, WhatsApp or email as needed.",
+];
+
+export default function ContactPage() {
+  const { phoneDisplay, phoneUrl, whatsappDisplay, whatsappUrl, email } = site.contact;
+  const { facebookUrl, tiktokUrl, youtubeUrl } = site;
+
+  const starterMessage =
+    "Hello Er Sujan Sapkota, I would like to discuss a public procurement or tender question.";
+  const whatsappChatUrl = `${whatsappUrl}${whatsappUrl.includes("?") ? "&" : "?"}text=${encodeURIComponent(starterMessage)}`;
+
+  const contactRows = [
+    { icon: Phone, label: "Phone", value: phoneDisplay, href: phoneUrl },
+    { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappChatUrl },
+    { icon: Mail, label: "Email", value: email, href: `mailto:${email}` },
   ];
 
   return (
     <>
-      <PageHeader
-        eyebrow="Contact"
-        title="Get in touch directly"
-        description="Call or message me on WhatsApp. Tell me what you are working on and I will explain how I can help."
-        breadcrumbs={[{ name: "Contact", path: "/contact" }]}
+      <JsonLd
+        value={[
+          faqSchema(contactFaqs),
+          breadcrumbSchema([{ name: "Contact", path: "/contact" }]),
+        ]}
       />
 
-      <section className="bg-cream py-16 sm:py-20">
-        <Container className="max-w-5xl">
-          <div className="grid gap-6 md:grid-cols-2">
-            {channels.map(({ icon: Icon, eyebrow, title, description, href, action, variant }) => (
-              <article
-                key={eyebrow}
-                className="flex h-full flex-col rounded-2xl border border-line bg-white p-8 shadow-soft sm:p-10"
-              >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
-                  <Icon aria-hidden="true" className="h-6 w-6" />
-                </span>
-                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-gold-600">
-                  {eyebrow}
-                </p>
-                <h2 className="mt-2 text-2xl font-bold tracking-tight">{title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{description}</p>
-                <div className="mt-auto pt-7">
-                  <Button href={href} variant={variant}>
-                    {action}
-                  </Button>
-                </div>
-              </article>
-            ))}
+      <section className="depth-glow bg-navy-950 py-14 text-white sm:py-20">
+        <Container>
+          <Breadcrumbs light items={[{ name: "Contact", path: "/contact" }]} />
+          <div className="max-w-4xl">
+            <p className="eyebrow text-gold-300">Contact</p>
+            <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+              Tell us what you&apos;re working on.
+            </h1>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
+              Message {site.name} on WhatsApp with your tender or procurement question.
+              Share the basics and you will get a clear, practical response.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href={whatsappChatUrl} variant="gold">
+                Message on WhatsApp
+              </Button>
+              <Button href={phoneUrl} variant="light">
+                Call Us
+              </Button>
+            </div>
           </div>
+        </Container>
+      </section>
 
-          <div className="mt-6 flex flex-col gap-4 rounded-xl border border-line bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-900/5 text-navy-700">
-                <Mail aria-hidden="true" className="h-5 w-5" />
-              </span>
-              <div>
-                <p className="text-sm font-bold text-navy-900">Prefer email?</p>
-                <a
-                  href={`mailto:${email}`}
-                  className="mt-1 inline-block rounded-sm text-sm font-semibold text-navy-700 hover:text-gold-600"
-                >
-                  {email}
-                </a>
+      <section className="bg-white py-16 sm:py-20">
+        <Container className="max-w-6xl">
+          <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-start lg:gap-16">
+            <div>
+              <p className="eyebrow">WhatsApp</p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+                Send your question on WhatsApp or call {phoneDisplay}.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+                Open a chat with a short note about your tender, contract or e-GP question.
+                Add any reference number you already have and continue the conversation at
+                your convenience.
+              </p>
+              <div className="mt-7">
+                <Button href={whatsappChatUrl} variant="gold">
+                  Open WhatsApp Chat
+                </Button>
+              </div>
+              <p className="mt-3 text-xs text-muted">
+                Opens WhatsApp with a starter message. Add your details before sending.
+              </p>
+
+              <div className="mt-12 border-t border-line pt-10">
+                <p className="eyebrow">What to share</p>
+                <h3 className="mt-3 text-xl font-bold tracking-tight">
+                  Details that help us reply faster.
+                </h3>
+                <ol className="mt-5 space-y-3">
+                  {shareDetails.map((detail, index) => (
+                    <li
+                      key={detail}
+                      className="flex gap-4 text-sm leading-relaxed text-charcoal/85 sm:text-base"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy-900 text-xs font-bold text-gold-400">
+                        {index + 1}
+                      </span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
-            <Button href={`mailto:${email}`} variant="secondary">
-              Send an Email
-            </Button>
+
+            <aside className="space-y-6">
+              <div className="rounded-2xl border border-line bg-cream p-7 shadow-soft">
+                <p className="eyebrow">Contact our team</p>
+                <h2 className="mt-3 text-xl font-bold tracking-tight">Direct contact details</h2>
+                <div className="mt-6 space-y-3">
+                  {contactRows.map(({ icon: Icon, label, value, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      className="flex items-start gap-4 rounded-xl border border-line bg-white p-4 transition-colors hover:border-gold-500"
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-900 text-gold-400">
+                        <Icon aria-hidden="true" className="h-5 w-5" />
+                      </span>
+                      <span>
+                        <span className="block text-xs font-semibold uppercase tracking-[0.12em] text-gold-600">
+                          {label}
+                        </span>
+                        <span className="mt-1 block break-words text-sm font-semibold text-navy-900">
+                          {value}
+                        </span>
+                      </span>
+                    </a>
+                  ))}
+                </div>
+
+                <div className="mt-6 border-t border-line pt-6">
+                  <h3 className="text-sm font-bold text-navy-900">Follow us</h3>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    <a
+                      href={facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:border-gold-500"
+                    >
+                      <FacebookIcon className="h-4 w-4" />
+                      Facebook
+                      <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href={tiktokUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:border-gold-500"
+                    >
+                      <TikTokIcon className="h-4 w-4" />
+                      TikTok
+                      <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href={youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:border-gold-500"
+                    >
+                      <YouTubeIcon className="h-4 w-4" />
+                      YouTube
+                      <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+                <p className="mt-5 text-sm text-muted">
+                  Based in Nepal · Supporting procurement work across Nepal.
+                </p>
+              </div>
+            </aside>
           </div>
 
-          <div className="mt-8 rounded-xl border border-gold-400/40 bg-white p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-gold-600">
-              Before you get in touch
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Keep the tender or contract reference, your timeline and the main question
-              you want answered ready. Please avoid sharing sensitive personal or
-              financial information over chat.
-            </p>
+          <div className="mt-14 border-t border-line pt-10">
+            <p className="eyebrow">What happens next</p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+              From question to next step.
+            </h2>
+            <ol className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {nextSteps.map((step, index) => (
+                <li
+                  key={step}
+                  className="rounded-xl border border-line bg-cream p-5 text-sm leading-relaxed text-charcoal/85"
+                >
+                  <span className="font-display text-xl font-semibold text-gold-600">
+                    0{index + 1}
+                  </span>
+                  <p className="mt-3">{step}</p>
+                </li>
+              ))}
+            </ol>
           </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-line bg-cream py-16 sm:py-20">
+        <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <SectionHeading
+            eyebrow="Quick answers"
+            title="Common questions before you get in touch."
+            description="Short answers about starting a conversation and what happens next."
+          />
+          <FAQ items={contactFaqs} />
         </Container>
       </section>
     </>

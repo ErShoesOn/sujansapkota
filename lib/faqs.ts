@@ -30,3 +30,21 @@ export const homeFaqs = [
       "Yes. Training can be arranged online or as physical workshops, covering topics such as procurement fundamentals, tender preparation, bidder registration, Bolpatra and e-GP, and contract management. Formats and topics are planned with the requesting organisation.",
   },
 ];
+
+export const contactFaqs = [
+  {
+    question: "Do I need to send tender documents before getting in touch?",
+    answer:
+      "No. Start with a short question and the tender reference. Share documents only when they are useful and you are comfortable doing so.",
+  },
+  {
+    question: "Can I call instead of messaging?",
+    answer:
+      "Yes. Call the number above for a quick discussion. WhatsApp is useful when you want to share a reference or continue the conversation in writing.",
+  },
+  {
+    question: "Does starting a WhatsApp chat confirm an engagement?",
+    answer:
+      "No. A message starts a conversation. Scope, availability and next steps are agreed directly before any work begins.",
+  },
+];

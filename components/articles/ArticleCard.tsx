@@ -8,7 +8,13 @@ type ArticleCardData = Pick<
   "slug" | "title" | "description" | "category" | "publishedAt"
 >;
 
-export function ArticleCard({ article }: { article: ArticleCardData }) {
+export function ArticleCard({
+  article,
+  headingLevel: Heading = "h3",
+}: {
+  article: ArticleCardData;
+  headingLevel?: "h2" | "h3";
+}) {
   return (
     <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-card">
       <div className="flex items-center justify-between gap-3">
@@ -21,11 +27,11 @@ export function ArticleCard({ article }: { article: ArticleCardData }) {
         />
       </div>
 
-      <h3 className="mt-5 text-lg font-bold leading-snug tracking-tight">
+      <Heading className="mt-5 text-lg font-bold leading-snug tracking-tight">
         <Link href={`/knowledge-centre/${article.slug}`} className="rounded-sm">
           {article.title}
         </Link>
-      </h3>
+      </Heading>
 
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{article.description}</p>
 

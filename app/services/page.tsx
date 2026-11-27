@@ -48,41 +48,41 @@ export default function ServicesPage() {
 
       <section className="bg-cream py-16 sm:py-20">
         <Container>
-          <div className="space-y-6">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <article
+              <Link
                 key={service.slug}
                 id={service.slug}
-                className="grid gap-6 rounded-2xl border border-line bg-white p-7 shadow-soft sm:p-9 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-8"
+                href={`/services/${service.slug}`}
+                className="group flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-card"
               >
-                <span className="font-display text-3xl font-semibold text-gold-600">
-                  0{index + 1}
-                </span>
-                <div>
-                  <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-                    <Link href={`/services/${service.slug}`} className="rounded-sm">
-                      {service.title}
-                    </Link>
-                  </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                    {service.intro}
-                  </p>
-                  <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-                    {service.scope.slice(0, 6).map((item) => (
-                      <li key={item} className="flex gap-2 text-xs text-charcoal/80 sm:text-sm">
-                        <CheckCircle2 aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-display text-3xl font-semibold text-gold-600">
+                    0{index + 1}
+                  </span>
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="h-5 w-5 text-muted transition-all group-hover:translate-x-1 group-hover:text-gold-600"
+                  />
                 </div>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-navy-900/15 px-5 py-2.5 text-sm font-semibold text-navy-900 transition-colors hover:border-gold-500 hover:bg-white"
-                >
-                  Details <ArrowRight aria-hidden="true" className="h-4 w-4" />
-                </Link>
-              </article>
+                <h2 className="mt-4 text-xl font-bold leading-snug tracking-tight">
+                  {service.title}
+                </h2>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                  {service.summary}
+                </p>
+                <ul className="mt-5 space-y-2 border-t border-line pt-4">
+                  {service.scope.slice(0, 3).map((item) => (
+                    <li key={item} className="flex gap-2 text-xs text-charcoal/80">
+                      <CheckCircle2
+                        aria-hidden="true"
+                        className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-600"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Link>
             ))}
           </div>
         </Container>

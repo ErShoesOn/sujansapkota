@@ -20,12 +20,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/youtube",
-        destination: "/knowledge-centre#videos",
+        destination: "/knowledge-centre",
         permanent: true,
       },
       {
         source: "/updates",
-        destination: "/knowledge-centre#updates",
+        destination: "/knowledge-centre",
         permanent: true,
       },
     ];
