@@ -70,13 +70,13 @@ export const mainNav: NavItem[] = [
 export const footerNav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Procurement Training", href: "/services/procurement-training" },
   { label: "Knowledge Centre", href: "/knowledge-centre" },
-  { label: "Resources", href: "/knowledge-centre/resources" },
-  { label: "Average Bid Calculator", href: "/average-bid-calculator" },
   { label: "Contact", href: "/contact" },
-  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Resources", href: "/knowledge-centre/resources" },
+  { label: "Procurement Training", href: "/services/procurement-training" },
   { label: "Disclaimer", href: "/disclaimer" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Average Bid Calculator", href: "/average-bid-calculator" },
 ];
 
 export const officialSources: { label: string; href: string; note: string }[] = [
