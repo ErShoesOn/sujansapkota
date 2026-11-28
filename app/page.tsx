@@ -3,12 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { HeroCredentials } from "@/components/home/HeroCredentials";
 import { Introduction } from "@/components/home/Introduction";
 import { Expertise } from "@/components/home/Expertise";
-import { ServicesPreview } from "@/components/home/ServicesPreview";
-import { ProfessionalStory } from "@/components/home/ProfessionalStory";
-import { FeaturedArticles } from "@/components/home/FeaturedContent";
-import { Learning } from "@/components/home/Learning";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
-import { CTA } from "@/components/ui/CTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { faqSchema } from "@/lib/schema";
@@ -29,12 +24,7 @@ export default function HomePage() {
       <HeroCredentials />
       <Introduction />
       <Expertise />
-      <ServicesPreview />
-      <ProfessionalStory />
-      <FeaturedArticles />
-      <Learning />
       <HomeFAQ />
-      <CTA />
     </>
   );
 }

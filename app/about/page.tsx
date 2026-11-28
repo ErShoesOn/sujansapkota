@@ -3,7 +3,6 @@ import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CTA } from "@/components/ui/CTA";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createMetadata({
@@ -144,8 +143,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
-
-      <CTA />
     </>
   );
 }

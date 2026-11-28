@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CTA } from "@/components/ui/CTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema } from "@/lib/schema";
 import { services } from "@/lib/services";
@@ -115,8 +114,6 @@ export default function ServicesPage() {
           </ol>
         </Container>
       </section>
-
-      <CTA />
     </>
   );
 }

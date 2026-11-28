@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { CTA } from "@/components/ui/CTA";
 import { getAllArticles } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
 
@@ -46,11 +45,6 @@ export default function KnowledgeCentrePage() {
           )}
         </Container>
       </section>
-
-      <CTA
-        title="Have a procurement question we should explain?"
-        description="Suggest a topic or ask a question — practical, original guides are built around what contractors actually need."
-      />
     </>
   );
 }

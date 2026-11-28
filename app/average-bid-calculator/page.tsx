@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { CTA } from "@/components/ui/CTA";
 import { AverageBidCalculator } from "@/components/calculator/AverageBidCalculator";
 import { createMetadata } from "@/lib/metadata";
 
@@ -26,8 +25,6 @@ export default function AverageBidCalculatorPage() {
       <section className="bg-cream py-16 sm:py-20">
         <AverageBidCalculator />
       </section>
-
-      <CTA />
     </>
   );
 }

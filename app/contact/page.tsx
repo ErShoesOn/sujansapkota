@@ -50,13 +50,6 @@ const shareDetails = [
   "The specific question you want answered",
 ];
 
-const nextSteps = [
-  "Send a short question on WhatsApp or call.",
-  "Share the tender reference, timeline and main issue.",
-  "Discuss the requirements and realistic next steps.",
-  "Continue by phone, WhatsApp or email as needed.",
-];
-
 export default function ContactPage() {
   const { phoneDisplay, phoneUrl, whatsappDisplay, whatsappUrl, email } = site.contact;
   const { facebookUrl, tiktokUrl, youtubeUrl } = site;
@@ -214,26 +207,6 @@ export default function ContactPage() {
                 </p>
               </div>
             </aside>
-          </div>
-
-          <div className="mt-14 border-t border-line pt-10">
-            <p className="eyebrow">What happens next</p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-              From question to next step.
-            </h2>
-            <ol className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {nextSteps.map((step, index) => (
-                <li
-                  key={step}
-                  className="rounded-xl border border-line bg-cream p-5 text-sm leading-relaxed text-charcoal/85"
-                >
-                  <span className="font-display text-xl font-semibold text-gold-600">
-                    0{index + 1}
-                  </span>
-                  <p className="mt-3">{step}</p>
-                </li>
-              ))}
-            </ol>
           </div>
         </Container>
       </section>
